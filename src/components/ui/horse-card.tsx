@@ -11,13 +11,13 @@ interface HorseCardProps {
 
 const HorseCard: React.FC<HorseCardProps> = ({ image, name, description, reversed = false }) => {
   return (
-    <div className={`flex ${reversed ? 'flex-row-reverse' : ''} mb-10`}>
-      <img src={image} alt={name} className="w-1/2 h-48 object-cover" />
+    <div className={`flex ${reversed ? 'flex-row-reverse' : ''} text-2xl`}>
+      <img src={image} alt={name} className="" />
       <div className="w-1/2 p-4 flex flex-col justify-center">
-        <h2 className="text-xl font-bold">{name}</h2>
-        <p>{description}</p>
+        <h2 className="">{name}</h2>
+        <p className="">{description}</p>
         <Link href='/faire-une-offre-form'>
-            <Button>Faire une offre</Button>
+          <Button>Faire une offre</Button>
         </Link>
       </div>
     </div>
