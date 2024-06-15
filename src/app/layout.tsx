@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} flex justify-end`}>
+      <body className={`${inter.className}`}>
         <NavbarEcurieAntonniere />
         <main>{children}</main>
       </body>

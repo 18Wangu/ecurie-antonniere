@@ -132,7 +132,8 @@ export {
 // Navbar Ecurie Antonniere
 export default function NavbarEcurieAntonniere() {
   return (
-    <NavigationMenu>
+    // changer par bleu quand cliqué et pas de sous nvbar
+    <NavigationMenu className="fixed top-0 right-0">
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger>Accueil</NavigationMenuTrigger>
