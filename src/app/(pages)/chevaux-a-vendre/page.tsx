@@ -26,10 +26,12 @@ const horseData = [
 
 const ChevauxAVendre: React.FC = () => {
   return (
-    <div className="">
-      <h1 className="t">Liste des chevaux à vendre</h1>
-      <p className="">Voici les chevaux qui sont en vente. Il n'y a pas de prix affiché. C'est à vous de faire une offre en cliquant sur le bouton "Faire une offre".</p>
-      <p className="">Si vous ne trouvez pas le cheval qui vous convient, vous pouvez cliquer ici (bouton contact) et spécifier l'âge, la taille, le prix, etc., souhaités.</p>
+    <div className="flex flex-col mx-48 my-14">
+      <h1 className="text-2xl text-foreground text-center">Liste des chevaux à vendre</h1>
+      <div className='mt-8 mb-14'>
+        <p className="text-center text-muted-foreground">Voici les chevaux qui sont en vente. Il n'y a pas de prix affiché. C'est à vous de faire une offre en cliquant sur le bouton "Faire une offre".</p>
+        <p className="text-center text-muted-foreground">Si vous ne trouvez pas le cheval qui vous convient, vous pouvez nous envoyer un mail à <a href="mailto:sitealacarte49@gmail.com" className='text-primary underline'>sitealacarte49@gmail.com</a> en indiquant l'âge, la taille et le prix souhaités.</p>
+      </div>
       <div>
         {horseData.map((horse, index) => (
           <HorseCard
