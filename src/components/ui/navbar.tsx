@@ -5,24 +5,25 @@ import clsx from "clsx";
 import Link from "next/link";
 
 const links = [
-    { name: "Compte", href: "/pages/compte" },
-    { name: "Faq", href: "/pages/faq" },
-    { name: "Panier", href: "/pages/panier" },
+    { name: "Acceuil", href: "/" },
+    { name: "Catalogue Chevaux", href: "/chevaux-a-vendre" },
+    { name: "A propos", href: "/a-propos" },
+    { name: "Contact", href: "/contact" },
 ];
 
 export default function NavbarEcurieAntonniere() {
     const pathname = usePathname();
   return (
-    <div className="flex">
+    <div className="flex justify-end p-4 bg-input">
       {links.map((link) => {
         return (
           <Link
             key={link.name} 
             href={link.href}
             className={clsx(
-              'text-2xl text-primary pl-12 uppercase',
+              'text-xl text-foreground pl-12',
               {
-                'text-[#149A77]': pathname === link.href,
+                'text-primary': pathname === link.href,
               },
             )}
           >
