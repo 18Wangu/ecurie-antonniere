@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Impressive Meteor Shower */
 @layer base {
   :root {
     --background: 253 44% 98%;
@@ -48,7 +49,6 @@
     --ring: 253 91% 58%;
   }
 }
-
 
 @layer base {
   * {

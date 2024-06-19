@@ -1,8 +1,9 @@
 "use client"
 
 import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
+import { useForm, Controller } from "react-hook-form"
 import { z } from "zod"
+import { useRouter } from 'next/router'
 
 import { Button } from "@/components/ui/button"
 import {
@@ -14,7 +15,6 @@ import {
   FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
-import { toast } from "@/components/ui/use-toast"
 import {
   Select,
   SelectContent,
@@ -34,49 +34,55 @@ const FormSchema = z.object({
 })
 
 export default function InputForm() {
+  const router = useRouter();
+  
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
       horseName: "",
-      number: "",
+      number: 0,
       message: "",
     },
   })
 
-  function onSubmit(data: z.infer<typeof FormSchema>) {
-    toast({
-      title: "You submitted the following values:",
-      description: (
-        <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-          <code className="text-white">{JSON.stringify(data, null, 2)}</code>
-        </pre>
-      ),
-    })
+  /*
+  const onSubmit = (data) => {
+    console.log(data);
+    router.push('/offre-envoyer');
   }
+    */
 
   return (
     <div className="flex justify-center items-center flex-col h-screen">
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="w-2/3 space-y-6">
+        <form /*</Form>onSubmit={form.handleSubmit(onSubmit)}*/ className="w-2/3 space-y-6">
           <FormField
             control={form.control}
             name="horseName"
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Nom du cheval</FormLabel>
-                <Select
-                  onValueChange={field.onChange}
-                  value={field.value}
-                >
-                  <SelectTrigger className="w-[180px]">
-                    <SelectValue placeholder="Nom du cheval" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="tonere">Tonere</SelectItem>
-                    <SelectItem value="eclair">Eclair</SelectItem>
-                    <SelectItem value="tempete">Tempete</SelectItem>
-                  </SelectContent>
-                </Select>
+                <FormControl>
+                  <Controller
+                    control={form.control}
+                    name="horseName"
+                    render={({ field }) => (
+                      <Select
+                        onValueChange={field.onChange}
+                        value={field.value}
+                      >
+                        <SelectTrigger className="w-[180px]">
+                          <SelectValue placeholder="Nom du cheval" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="tonere">Tonere</SelectItem>
+                          <SelectItem value="eclair">Eclair</SelectItem>
+                          <SelectItem value="tempete">Tempete</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    )}
+                  />
+                </FormControl>
                 <FormMessage />
               </FormItem>
             )}
