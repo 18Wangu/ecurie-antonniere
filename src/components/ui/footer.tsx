@@ -15,7 +15,7 @@ const Footer = () => {
                 <h2 className="text-xl text-primary-foreground">Navigation</h2>
                 <ul className="text-base text-secondary">
                     <li><a href="/" className="hover:text-primary">Accueil</a></li>
-                    <li><a href="/catalogue" className="hover:text-primary">Catalogue</a></li>
+                    <li><a href="/chevaux-a-vendre" className="hover:text-primary">Catalogue</a></li>
                     <li><a href="/a-propos" className="hover:text-primary">A propos</a></li>
                     <li><a href="/contact" className="hover:text-primary">Contact</a></li>
                 </ul>
