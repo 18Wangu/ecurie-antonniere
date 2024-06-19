@@ -5,23 +5,23 @@
 /* Impressive Meteor Shower */
 @layer base {
   :root {
-    --background: 253 44% 98%;
-    --foreground: 253 58% 0%;
+    --background: 253 44% 98%; /* Définie la couleur de fond générale de la page ou d'un élément. */
+    --foreground: 253 58% 0%; /* Définie la couleur principale du texte ou des éléments en avant-plan. */
     --muted: 253 7% 87%;
-    --muted-foreground: 253 13% 37%;
-    --popover: 253 44% 98%;
+    --muted-foreground: 253 13% 37%; 
+    --popover: 253 44% 98%; 
     --popover-foreground: 253 58% 0%;
-    --card: 253 44% 97%;
+    --card: 253 44% 97%; /* Définie la couleur de fond des cartes. */
     --card-foreground: 0 0% 0%;
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --primary: 253 91% 58%;
+    --border: 220 13% 91%; /* Définie la couleur des bordures. */
+    --input: 220 13% 91%; /* Définie la couleur de fond des champs de saisie. */
+    --primary: 253 91% 58%; /* Définie la couleur principale de l'application. Bouton */
     --primary-foreground: 253 91% 98%;
     --secondary: 253 5% 89%;
     --secondary-foreground: 253 5% 29%;
     --accent: 253 12% 82%;
     --accent-foreground: 253 12% 22%;
-    --destructive: 339.2 90.36% 51.18%;
+    --destructive: 339.2 90.36% 51.18%; /* Définie la couleur des éléments destructifs. Supression*/
     --destructive-foreground: 0 0% 100%;
     --ring: 253 91% 58%;
     --radius: 0.5rem;
